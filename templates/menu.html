@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <form action="/order" method="post">
+        <ul>
+            {% for item in menu %}
+                <li>
+                    <input type="checkbox" id="item{{ item.id }}" name="item" value="{{ item.id }}">
+                    <label for="item{{ item.id }}">{{ item.name }} - ${{ item.price }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+</head>
+<body>
+    <h1>Order Summary</h1>
+    <ul>
+        {% for item_id in items %}
+        <li>{{ menu[int(item_id) - 1].name }} - ${{ menu[int(item_id) - 1].price }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Total: ${{ total }}</h2>
+</body>
+</html>
